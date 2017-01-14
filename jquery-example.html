@@ -1,0 +1,50 @@
+<htm>
+    <head>
+        <title>Hello JQuery</title>
+    </head>
+    <style></style>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="text/javascript">
+        var arrayOfNumbers = [];
+
+        function addNumbers() {
+            var num = parseInt($('#num').val());//document.getElementById('num').value;
+            arrayOfNumbers.push(num);
+            var msgDiv = $('#msg');
+            var sum = 0;
+
+/*
+            for(var count = 0;count < arrayOfNumbers.length;count++) {
+                sum += arrayOfNumbers[count];
+            }
+*/
+/*
+            arrayOfNumbers.forEach(function(item) {
+                sum += item;
+            });
+*/
+
+            $.each(arrayOfNumbers, function(i, n) {
+                sum += n;
+            });
+
+            $.
+            var msg = 'Sum is: ' + sum
+            msgDiv.html(msg);
+            console.log(msg);
+        }
+    </script>
+
+    <body>
+        <div style="color: blue;font-size: 20px;margin-left: 10px;">
+            <span style="margin-right: 5px;">Enter No: </span>
+            <input type="number" id="num"/>
+        </div>
+        <button value="Print Sum" onclick="addNumbers()">Add</button>
+
+        <div id="msg" style="color: blue;font-size: 20px;margin-left: 10px;"> 
+        </div>
+    </body>
+</htm>

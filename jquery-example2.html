@@ -1,0 +1,39 @@
+<htm>
+    <head>
+        <title>Hello JQuery</title>
+    </head>
+    <style></style>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="text/javascript">
+        var arrayOfNames = [];
+
+        function addNames() {
+            var name = $('#name').val();
+            var msgDiv = $('#msg');
+            arrayOfNames.push(name);
+            var msg = 'Name: ';
+
+            for(var count = 0;count < arrayOfNames.length;count++) {
+                if(count != 0) {
+                    msg += ', ';//msg = msg + ', ';
+                }
+                msg += arrayOfNames[count];
+            }
+            msgDiv.html(msg);
+            console.log(msg);
+        }
+    </script>
+
+    <body>
+        <div style="color: blue;font-size: 20px;margin-left: 10px;">
+            <span style="margin-right: 5px;">Enter No: </span>
+            <input type="number" id="num"/>
+        </div>
+        <button value="Print" onclick="addNames()">Add</button>
+
+        <div id="msg" style="color: blue;font-size: 20px;margin-left: 10px;">Names: 
+        </div>
+    </body>
+</htm>
