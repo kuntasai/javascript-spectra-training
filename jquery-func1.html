@@ -1,0 +1,42 @@
+<htm>
+    <head>
+        <title>Hello World</title>
+    </head>
+    <style></style>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="javascript">
+        function verifyVotingEligibility() {
+            var name = $('#name').val();
+            var age =  $('#age').val();
+            if(age >= 18) {
+                $('#notEligible').hide();
+                $('#eligible').show();
+            }
+            else {
+                $('#eligible').hide();
+                $('#notEligible').show();
+            }
+        }
+    </script>
+
+    <body>
+        <div style="color: blue;font-size: 20px;margin-left: 10px;">
+            <span style="margin-right: 5px;">Name</span>
+            <input type="text" id="name"/>
+        </div>
+        <div style="color: blue;font-size: 20px;margin-left: 10px;">
+            <span style="margin-right: 5px;">Age</span>
+            <input type="number" id="age"/>
+        </div>
+        <button onclick="verifyVotingEligibility()">Verify</button>
+
+        <div>
+            <span style="margin-right: 5px; display: none;" id="eligible">You are eligible for voting</span>
+        </div>
+        <div>
+            <span style="margin-right: 5px; display: none;" id="notEligible">You are not eligible for voting</span>
+        </div>
+    </body>
+</htm>
