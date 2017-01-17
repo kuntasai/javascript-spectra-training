@@ -1,0 +1,95 @@
+<htm>
+    <head>
+        <title>Jquery Assignment1</title>
+    </head>
+    <style>
+        .tbl {
+            border: 2px solid black;
+            margin-top: 15px;
+            padding: 10px;
+            display: none;   
+        }
+    </style>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="text/javascript">
+    </script>
+
+    <body>
+        <table style="width: 100%;height: 10%;">
+            <tr>
+                <td style="width: 50%;">
+                    <button onclick="$('#tblCollege').toggle();">College</button>
+                </td>
+                <td>
+                    <button onclick="$('#tblSchool').toggle();">School</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <table id="tblCollege" class="tbl">
+                            <tr>
+                                <td>
+                                    <label>Name</label>    
+                                </td>    
+                                <td>
+                                    <input value="Deepak" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Roll</label>    
+                                </td>    
+                                <td>
+                                    <input placeholder="Enter a rollno" /><br/>
+                                </td>
+                            <tr>
+                                <td>
+                                    <label>Stream</label>    
+                                </td>    
+                                <td>
+                                    <select>
+                                        <option value="science">Science</option>
+                                        <option value="commerse">Commerse</option>
+                                        <option value="arts">Arts</option>
+                                    </select>                                
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <table id="tblSchool" class="tbl">
+                            <tr>
+                                <td>
+                                    <label>Name</label>    
+                                </td>    
+                                <td>
+                                    <input value="Deepak" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Roll</label>    
+                                </td>    
+                                <td>
+                                    <input placeholder="Enter a rollno" type="text"/><br/>
+                                </td>
+                            <tr>
+                                <td>
+                                    <label>Marks</label>    
+                                </td>    
+                                <td>
+                                    <input placeholder="Enter marks" type="number"/><br/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</htm>

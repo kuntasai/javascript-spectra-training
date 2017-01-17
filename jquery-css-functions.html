@@ -1,0 +1,45 @@
+<htm>
+    <head>
+        <title>Driving Eligibility</title>
+    </head>
+    <style>
+        .tbl {
+            border: 2px solid black;
+            margin-top: 15px;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="text/javascript">
+        function verifyDriver() {
+            var name = $('#name').val();
+            var isAbove18 = $('#above18').is(':checked');
+
+            if(isAbove18) {
+                $('#msg').css('background-color', 'green');
+                $('#msg').addClass('tbl');
+//                $('#msg').removeClass('tbl');
+                
+                $('#msg').text('Hey ' + name + ' you are eligible for voting');
+            }
+            else {
+                $('#msg').css('background-color', 'red');
+                $('#msg').text('Hey ' + name + ' you are not eligible for voting');
+            }
+        }
+    </script>
+
+    <body>
+        <lable>Name</lable>
+        <input placeholder="Enter name" id="name" type="text" /><br/>
+
+        <input type="checkbox" id="above18"/>
+        <label>Are you above 18 years of Age</label>  <br/>  
+
+        <button onclick="verifyDriver()">Verify</button><br/>
+
+        <span id="msg"></span>
+    </body>
+</htm>
