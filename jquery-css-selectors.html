@@ -1,0 +1,83 @@
+<htm>
+    <head>
+        <title>Jquery Assignment1</title>
+    </head>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="text/javascript">
+        var checked = false;
+
+        function checkUncheckAll() {
+            checked = !checked;
+            $('input[type="checkbox"]').prop('checked', checked);
+            if(checked) {
+                $('#selectUnselectBtn').text('UnSelect All');
+            }
+            else {
+                $('#selectUnselectBtn').text('Select All');
+            }
+        }
+        
+        function hideAll(button) {
+            $(button).parents('table').toggle();
+        }
+    </script>
+
+    <body>
+        <table>
+            <tbody>
+                <tr>
+                    <th>
+                        <button type="button" id="selectUnselectBtn" onclick="checkUncheckAll();">    
+                        SelectAll
+                    </th>
+                    <th>
+                        <button type="button" id="hideShowBtn" onclick="hideAll(this);">    
+                        Hide All
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">    
+                    </td>    
+                    <td>
+                        <span>Sai</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>    
+                    <td>
+                        <span>Gopi</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">    
+                    </td>    
+                    <td>
+                        <span>Mukesh</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">    
+                    </td>    
+                    <td>
+                        <span>Harish</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">    
+                    </td>    
+                    <td>
+                        <span>Nirup</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</htm>

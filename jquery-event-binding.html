@@ -1,0 +1,28 @@
+<htm>
+    <head>
+        <title>Jquery Event Binding</title>
+    </head>
+    <script type="text/javascript" src="jquery.js">
+    </script>
+
+    <script lang="text/javascript">
+        function bindEvent() {
+            var isBindClickEvent = $('#bindEvtChkBox').is(':checked');
+            if(isBindClickEvent) {
+               $('#button1').on('change', function() {
+                   alert('Hi from click event of Button1')
+               }); 
+            }
+            else {
+               $('#button1').off('click'); 
+            }
+        }
+    </script>
+
+    <body>
+        <input type="checkbox" onclick="bindEvent();" id="bindEvtChkBox"/>
+        <label>Bind event to Button1</label> <br/>  
+
+        <button id="button1">Button1</button><br/>
+    </body>
+</htm>
