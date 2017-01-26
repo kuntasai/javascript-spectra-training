@@ -1,0 +1,113 @@
+<html>
+<head>
+	<title> Student Percentage Calculator </title>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css"/>
+
+</head>
+<style>
+
+</style>
+<script type="text/javascript" src="jquery.js">
+</script>
+
+<script lang="text/javascript">
+	function calculateM() {
+		var name = $('#name').val();
+		var rollno = $('#rollno').val();
+		var maths = parseInt($('#maths').val());
+		var english = parseInt($('#English').val());
+		var science = parseInt($('#Science').val());
+		var hindi = parseInt($('#Hindi').val());
+		var msg = $('#msg');
+		var percentage = ((maths + english + science + hindi) / 400) * 100;
+		msg.removeClass('alert-success');
+		if (percentage <= 100 && percentage > 90) {
+			msg.text('Hello ' + name + ' You have Excelled ' + ' percetage is ' + percentage);
+			msg.addClass('alert-success');
+		}
+		else if (percentage >= 80 && percentage < 90) {
+			msg.css('background-color', 'green');
+			msg.text('Very Good');
+		}
+		else if (percentage >= 70 && percentage < 80) {
+			msg.css('background-color', 'blue');
+
+			msg.text('Good');
+			//     alert('Good');
+
+		}
+		else {
+			msg.css('background-color', 'red');
+
+			msg.text('You are Fail');
+			//alert('fail');
+
+		}
+	}
+
+</script>
+
+<body>
+
+	<div class="page-header"
+	/*style="margin-left: 450px;*/">
+	<h1 style="color: chocolate;" class="text-center">Student Percentage Calculator </h1>
+	<br/>
+	<br/>
+
+	<form class="form-horizontal">
+		<div class="form-group row">
+			<label class="control-label col-sm-3" for="email">Name</label>
+			<div class="col-sm-3">
+				<input type="text" class="form-control" id="name" placeholder="Enter Name">
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="control-label col-sm-3" for="pwd">RollNo:</label>
+			<div class="col-sm-3">
+				<input type="rollno" class="form-control" id="rollno" placeholder="Enter Roll no">
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-3">
+				<button type="button" class="btn btn-primary pull-right" onclick="$('#Marks').toggle();"> Marks</button>
+			</div>
+		</div>	
+	</form>
+
+	<form class="form-horizontal" id="Marks" style="display:none">
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="email">Maths</label>
+			<div class="col-sm-3">
+				<input type="number" class="form-control" id="maths" placeholder="Enter marks">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="email">English</label>
+			<div class="col-sm-3">
+				<input type="number" class="form-control" id="English" placeholder="Enter marks">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="email">Science</label>
+			<div class="col-sm-3">
+				<input type="number" class="form-control" id="Science" placeholder="Enter marks">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="email">Hindi</label>
+			<div class="col-sm-3">
+				<input type="number" class="form-control" id="Hindi" placeholder="Enter marks">
+			</div>
+		</div>
+        <div class="form-group row">
+			<div class="col-sm-3">
+                <button type="button" class="btn btn-primary pull-right" onclick="calculateM()"> Calculate Marks</button>
+            </div>
+		</div>
+
+	</form>
+<br/>
+<div id='msg' role="alert" class="alert"/>
+</body>
+</html>
