@@ -1,0 +1,19 @@
+<htm>
+    <head>
+        <title>Student Info App</title>
+    </head>
+    <script type="text/javascript" src="angular.js">
+    </script>
+    <script type="text/javascript" src="studentInfoApp.js">
+    </script>
+
+    <body ng-app="studentApp">
+        <div ng-controller="studentCntrl">
+            <b>{{msg}}</b><br/>
+            Name: <input ng-model="name" type="text"/><br/>
+            Roll: <input ng-model="roll" type="number"/><br/>
+            <button ng-click="setShowMsg();">Print Msg</button>
+            <br/><span ng-show="showMsg">Hi {{name}} your roll no. {{roll}}</span>
+        </div>
+    </body>
+</htm>
