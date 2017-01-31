@@ -2,12 +2,15 @@
     <head>
         <title>Students Info App</title>
     </head>
+    <script type="text/javascript" src="../jquery.js">
+    </script>
     <script type="text/javascript" src="angular.js">
     </script>
     <script type="text/javascript" src="studentInfoApp.js">
     </script>
     <script type="text/javascript" src="salutationFilter.js"></script>
     <script type="text/javascript" src="studentService.js"></script>
+    <script type="text/javascript" src="requiredDirective.js"></script>
 
     <body ng-app="studentApp">
         <h1>Students Detail</h1>
@@ -25,14 +28,76 @@
                     <th>
                         Expected Salary
                     </th>
+                    <th>
+                        Show Details
+                    </th>
                 </tr>
                 <tr ng-repeat="student in students">
                     <td>{{student.name | salutation: student.gender}}</td>
                     <td>{{student.roll}}</td>
                     <td>{{student.totalMarks}}</td>
                     <td>{{student.salary | currency}}</td>
+                    <td><button ng-click="showStdDetails($index)">Detail</button></td>
                 </tr>
             </table>
+            <br/>
+            <br/>
+            <form>
+                <table>
+                    <tr>
+                        <td>
+                           Name:
+                        </td>
+                        <td>
+                           <input required type="text" ng-model="std.name"/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Roll:
+                        </td>
+                        <td>
+                            <input required type="text" ng-model="std.roll"/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Eng Marks:
+                        </td>
+                        <td>
+                            <input required type="number" ng-model="std.eng"/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Maths Marks:
+                        </td>
+                        <td>
+                            <input required type="number" ng-model="std.maths"/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Hindi Marks:
+                        </td>
+                        <td>
+                            <input required type="number" ng-model="std.hindi"/><br/><br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Male:
+                        </td>
+                        <td>
+                            <input type="checkbox" ng-model="std.gender"/><br/><br/>
+                        </td></tr>
+                    <tr>
+                        <td>
+                            <input type="submit" ng-click="addStudent()" value="Add">
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </div>
     </body>
 </html>

@@ -17,4 +17,15 @@ app.controller('studentCntrl', ['$scope', 'studentService', function($scope, stu
     $scope.students.forEach(function(student) {
         student.totalMarks = studentService.getTotalMarks(student);
     });
+
+    $scope.addStudent = function() {
+        var gender = $scope.std.gender ? 'male' : 'female';
+        $scope.students.push({name: $scope.std.name, roll: $scope.std.roll, maths: $scope.std.maths, hindi: $scope.std.hindi,
+                              eng: $scope.std.eng, gender: gender, salary: 100909});
+        $scope.students[$scope.students.length - 1].totalMarks =  studentService.getTotalMarks($scope.std);
+    }
+
+    $scope.showStdDetails = function(index) {
+        $scope.std = $scope.students[index];
+    }
 }]);
