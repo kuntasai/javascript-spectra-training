@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Students Info App</title>
+    </head>
+    <script type="text/javascript" src="../angular.js">
+    </script>
+    <script type="text/javascript" src="studentInfoApp.js">
+    </script>
+    <script type="text/javascript" src="studentDirective.js"></script>
+
+    <body ng-app="studentApp">
+        <h1>Students Detail</h1>
+        <div ng-controller="studentCntrl">
+            <button ng-click="showSchTbl = true;">Show School</button>
+            <button  ng-click="showClgTbl = true;">Show College</button>
+            <student-list students="schoolStudents" ng-show="showSchTbl"></student-list>
+            <student-list students="collegStudents" ng-show="showClgTbl"></student-list>
+        </div>
+    </body>
